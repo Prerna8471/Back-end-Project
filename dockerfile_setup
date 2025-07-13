@@ -1,0 +1,1 @@
+FROM python:3.9-slimWORKDIR /appCOPY requirements.txt .RUN pip install --no-cache-dir -r requirements.txtCOPY . .EXPOSE 5000CMD ["python", "app.py"]

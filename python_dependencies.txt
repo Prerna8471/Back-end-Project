@@ -1,0 +1,1 @@
+Flask==2.3.3pymongo==4.8.0python-jwt==4.1.0cryptography==42.0.8pytest==8.3.2werkzeug==3.0.3

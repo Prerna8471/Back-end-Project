@@ -1,0 +1,78 @@
+{
+    "info": {
+        "name": "File Sharing API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Sign Up",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\": \"client@example.com\", \"password\": \"password\"}",
+                    "options": {"raw": {"language": "json"}}
+                },
+                "url": "{{base_url}}/signup"
+            }
+        },
+        {
+            "name": "Verify Email",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": "{{base_url}}/verify/{{verification_token}}"
+            }
+        },
+        {
+            "name": "Login",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"email\": \"test@example.com\", \"password\": \"password\"}",
+                    "options": {"raw": {"language": "json"}}
+                },
+                "url": "{{base_url}}/login"
+            }
+        },
+        {
+            "name": "Upload File",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {"key": "Authorization", "value": "Bearer {{token}}"}
+                ],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {"key": "file", "type": "file", "src": "/path/to/test.pptx"}
+                    ]
+                },
+                "url": "{{base_url}}/upload"
+            }
+        },
+        {
+            "name": "List Files",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {"key": "Authorization", "value": "Bearer {{token}}"}
+                ],
+                "url": "{{base_url}}/files"
+            }
+        },
+        {
+            "name": "Download File",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {"key": "Authorization", "value": "Bearer {{token}}"}
+                ],
+                "url": "{{base_url}}/download-file/{{file_id}}"
+            }
+        }
+    ]
+}
